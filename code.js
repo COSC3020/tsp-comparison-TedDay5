@@ -64,7 +64,7 @@ function tsp_ls(distance_matrix) {
     if (distance_matrix <= 1) {
         return 0;
     }
-    if (distance_matrix === 2) {
+    if (distance_matrix.length === 2) {
         return Math.min(distance_matrix[0][1], distance_matrix[1][0]);
     }
 
@@ -159,22 +159,24 @@ function calculateTourLength(distanceMatrix, tour) {
         length += distanceMatrix[tour[i]][tour[i + 1]];
     }
     length += distanceMatrix[tour[tour.length - 1]][tour[0]];
-    console.log("Tour length", length);
     return length;
 }
 
 let sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
-let heldKarpTimes = [];
-let localSearchTimes = [];
+let heldKarpResults = [];
+let localSearchResults = [];
 
 for (let size of sizes) {
     let matrix = generateDistanceMatrix(size);
 
     console.log("Map size:", size);
 
-    heldKarpTimes.push(measureRuntime(tsp_hk, matrix));
-    localSearchTimes.push(measureRuntime(tsp_ls, matrix));
+    let hkResult = measureRuntime(tsp_hk, matrix);
+    let lsResult = measureRuntime(tsp_ls, matrix);
 
-    console.log("Held-Karp Times:", heldKarpTimes);
-    console.log("Local Search Times:", localSearchTimes);
+    heldKarpResults.push(hkResult);
+    localSearchResults.push(lsResult);
+
+    console.log(`Held-Karp: Time = ${hkResult.time/1000} seconds, Tour Length = ${hkResult.result}`);
+    console.log(`Local Search: Time = ${lsResult.time/1000} seconds, Tour Length = ${lsResult.result}`);
 }

@@ -162,3 +162,6 @@ for (let size of sizes) {
     heldKarpTimes.push(measureRuntime(tsp_hk, matrix));
     localSearchTimes.push(measureRuntime(tsp_ls, matrix));
 }
+
+console.log("Held-Karp Times:", heldKarpTimes);
+console.log("Local Search Times:", localSearchTimes);

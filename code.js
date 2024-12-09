@@ -140,17 +140,27 @@ function generateDistanceMatrix(size) {
     let matrix = Array.from({ length: size }, () => 
         Array.from({ length: size }, () => Math.floor(Math.random() * 100) + 1)
     );
-    for (let n = 0; n < size; n++) {
-        matrix[n][n] = 0;
+    for (let i = 0; i < size; i++) {
+        matrix[i][i] = 0;
     }
     return matrix;
 }
 
 function measureRuntime(algorithm, distanceMatrix) {
     let startTime = performance.now();
-    algorithm(distanceMatrix);
+    let result = algorithm(distanceMatrix);
     let endTime = performance.now();
-    return endTime - startTime;
+    return { time: endTime - startTime, result: result };
+}
+
+function calculateTourLength(distanceMatrix, tour) {
+    let length = 0;
+    for (let i = 0; i < tour.length - 1; i++) {
+        length += distanceMatrix[tour[i]][tour[i + 1]];
+    }
+    length += distanceMatrix[tour[tour.length - 1]][tour[0]];
+    console.log("Tour length", length);
+    return length;
 }
 
 let sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];

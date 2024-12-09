@@ -159,9 +159,12 @@ let localSearchTimes = [];
 
 for (let size of sizes) {
     let matrix = generateDistanceMatrix(size);
+
+    console.log("Map size:", size);
+
     heldKarpTimes.push(measureRuntime(tsp_hk, matrix));
     localSearchTimes.push(measureRuntime(tsp_ls, matrix));
-}
 
-console.log("Held-Karp Times:", heldKarpTimes);
-console.log("Local Search Times:", localSearchTimes);
+    console.log("Held-Karp Times:", heldKarpTimes);
+    console.log("Local Search Times:", localSearchTimes);
+}

@@ -25,11 +25,11 @@ to this markdown file.
 
 I ran the program multiple times throughout the day, and for each matrix size I benchmarked both Held-Karp and local search to find the limit.
 
-I found after raising the input size to around 18, the Held-Karp search algorithm would time out.
-I left my PC on over an hour and I never got an input size over 18.
+I found after raising the input size to around 20, the Held-Karp search algorithm would time out.
+I left my PC on over an hour and I never got an input size over 20.
 
-I found after raising the input size to around 130, the Local search algorithm would time out.
-I constantly got large values around input size 130.
+I found after raising the input size to around 200, the Local search algorithm would time out.
+I constantly got large values around input size 200.
 
 I found that since the Held-Karp grew at a faster rate, it reaches it's limit much faster than local.
 Held-Karp search is better for smaller data sets, and when you need more accurate answers.

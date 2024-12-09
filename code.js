@@ -133,3 +133,32 @@ function distance(distance_matrix, squence) {
     }
     return accumulator;
 }
+
+//test functions
+
+function generateDistanceMatrix(size) {
+    let matrix = Array.from({ length: size }, () => 
+        Array.from({ length: size }, () => Math.floor(Math.random() * 100) + 1)
+    );
+    for (let n = 0; n < size; n++) {
+        matrix[n][n] = 0;
+    }
+    return matrix;
+}
+
+function measureRuntime(algorithm, distanceMatrix) {
+    let startTime = performance.now();
+    algorithm(distanceMatrix);
+    let endTime = performance.now();
+    return endTime - startTime;
+}
+
+let sizes = [5, 10, 15, 20, 25, 30];
+let heldKarpTimes = [];
+let localSearchTimes = [];
+
+for (let size of sizes) {
+    let matrix = generateDistanceMatrix(size);
+    heldKarpTimes.push(measureRuntime(tsp_hk, matrix));
+    localSearchTimes.push(measureRuntime(tsp_ls, matrix));
+}

@@ -31,6 +31,14 @@ TSP Held-Karp vs TSP Local Search Graph:
 
 <img src="TSP Held-Karp vs TSP Local Search Graph.png">
 
+TSP Local Extended Search Table:
+
+<img src="TSP Local Extended table.png">
+
+TSP Local Extended Search Graph:
+
+<img src="TSP local extended graph.png">
+
 For the first 6 map sizes, Held-Karp and Local search have equal tour lengths, but after that they deviate, local search always has more tours than Held-Karp.
 
 I ran the program multiple times throughout the day, and for each matrix size I benchmarked both Held-Karp and local search to find the limit.
@@ -38,8 +46,8 @@ I ran the program multiple times throughout the day, and for each matrix size I 
 I found after raising the input size to around 20, the Held-Karp search algorithm would time out.
 I left my PC on over an hour and I never got an input size over 20.
 
-I found after raising the input size to around 200, the Local search algorithm would time out.
-I constantly got large values around input size 200.
+I found after raising the input size to around 260, the Local search algorithm would time out.
+I constantly got large values around input size 260.
 
 I found that since the Held-Karp grew at a faster rate, it reaches it's limit much faster than local.
 Held-Karp search is better for smaller data sets, and when you need more accurate answers.

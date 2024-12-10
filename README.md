@@ -23,6 +23,10 @@ Local Search found. Why is this?
 Add the code to run your experiments, graphs, and an explanation of what you did
 to this markdown file.
 
+TSP comparison Table:
+
+<img src="TSP-Comparison Table.png">
+
 For the first 6 map sizes, Held-Karp and Local search have equal tour lengths, but after that they deviate, local search always has more tours than Held-Karp.
 
 I ran the program multiple times throughout the day, and for each matrix size I benchmarked both Held-Karp and local search to find the limit.

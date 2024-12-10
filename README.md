@@ -22,3 +22,42 @@ Local Search found. Why is this?
 
 Add the code to run your experiments, graphs, and an explanation of what you did
 to this markdown file.
+
+TSP comparison Table:
+
+<img src="TSP-Comparison Table.png">
+
+TSP Held-Karp vs TSP Local Search Graph:
+
+<img src="TSP Held-Karp vs TSP Local Search Graph.png">
+
+TSP Local Extended Search Table:
+
+<img src="TSP Local Extended table.png">
+
+TSP Local Extended Search Graph:
+
+<img src="TSP local extended graph.png">
+
+For the first 6 map sizes, Held-Karp and Local search have equal tour lengths, but after that they deviate, local search always has more tours than Held-Karp.
+
+I ran the program multiple times throughout the day, and for each matrix size I benchmarked both Held-Karp and local search to find the limit.
+
+I found after raising the input size to around 20, the Held-Karp search algorithm would time out.
+I left my PC on over an hour and I never got an input size over 20.
+
+I found after raising the input size to around 260, the Local search algorithm would time out.
+I constantly got large values around input size 260.
+
+I found that since the Held-Karp grew at a faster rate, it reaches it's limit much faster than local.
+Held-Karp search is better for smaller data sets, and when you need more accurate answers.
+Local search is better for getting the solution quickly at the cost of accuracy.
+
+The first 5 matrixes both algorithms were pretty close in time, but after that they deviate heavily.
+Held-Karp always looks for the most optimal path so it takes more time to find.
+Local search has much more paths it can take due to exploring non optimal paths.
+
+“I certify that I have listed all sources used to complete this exercise, including the use
+of any Large Language Models. All of the work is my own, except where stated
+otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
+suspected, charges may be filed against me without prior notice.”

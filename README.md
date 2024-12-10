@@ -27,6 +27,10 @@ TSP comparison Table:
 
 <img src="TSP-Comparison Table.png">
 
+TSP Held-Karp vs TSP Local Search Graph:
+
+<img src="TSP Held-Karp vs TSP Local Search Graph.png">
+
 For the first 6 map sizes, Held-Karp and Local search have equal tour lengths, but after that they deviate, local search always has more tours than Held-Karp.
 
 I ran the program multiple times throughout the day, and for each matrix size I benchmarked both Held-Karp and local search to find the limit.
